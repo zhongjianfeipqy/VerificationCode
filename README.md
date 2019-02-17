@@ -1,5 +1,8 @@
 # VerificationCode
 
+#### 依赖于SnapKit
+ 
+
 ## 效果：
 ![验证码输入Demo.gif](https://upload-images.jianshu.io/upload_images/2094754-768de1c89184e230.gif?imageMogr2/auto-orient/strip)
 
