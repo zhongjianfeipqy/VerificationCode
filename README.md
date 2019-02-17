@@ -1,6 +1,7 @@
 # VerificationCode
 
 #### 依赖于SnapKit
+##### 下载完成后需要pod install
  
 
 ## 效果：
