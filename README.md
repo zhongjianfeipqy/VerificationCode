@@ -2,7 +2,13 @@
 
 #### 依赖于SnapKit
 ##### 下载完成后需要pod install
- 
+
+## 工具类
+![工具类.jpg](https://upload-images.jianshu.io/upload_images/2094754-d0116e762526d75f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 依赖的方法、可以使用自己项目的方法替换
+![依赖类.jpg](https://upload-images.jianshu.io/upload_images/2094754-7d23542eb01f6de1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ## 效果：
 ![验证码输入Demo.gif](https://upload-images.jianshu.io/upload_images/2094754-768de1c89184e230.gif?imageMogr2/auto-orient/strip)
