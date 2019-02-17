@@ -21,10 +21,8 @@
 
 
 ## 使用：
-### 初始化：
           // 初始化验证码输入框数量
-        TDWVerifyCodeView.init(inputTextNum: 6)
-    
+        let codeView = TDWVerifyCodeView.init(inputTextNum: 6)
     
          // 监听验证码输入的过程
         codeView.textValueChange = { [weak self] str in
@@ -36,3 +34,10 @@
             // 要做的事情
         }
 ###
+
+
+# 简书链接：
+# https://www.jianshu.com/p/d258714f7095
+
+# 喜欢的点个star，谢谢老铁们
+
