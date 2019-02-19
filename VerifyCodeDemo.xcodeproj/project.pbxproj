@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		254E53022219557000DCDC25 /* TDWExtensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E53012219557000DCDC25 /* TDWExtensions+String.swift */; };
 		2563206B22019629002A0DE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563206A22019629002A0DE6 /* AppDelegate.swift */; };
 		2563206D22019629002A0DE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563206C22019629002A0DE6 /* ViewController.swift */; };
 		2563207022019629002A0DE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2563206E22019629002A0DE6 /* Main.storyboard */; };
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		254E53012219557000DCDC25 /* TDWExtensions+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TDWExtensions+String.swift"; sourceTree = "<group>"; };
 		2563206722019629002A0DE6 /* VerifyCodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerifyCodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2563206A22019629002A0DE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2563206C22019629002A0DE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,13 +124,9 @@
 			children = (
 				2563206A22019629002A0DE6 /* AppDelegate.swift */,
 				2563206C22019629002A0DE6 /* ViewController.swift */,
-				254E53012219557000DCDC25 /* TDWExtensions+String.swift */,
-				256320982201963F002A0DE6 /* TDWVerifyCodeView.swift */,
-				2563209C2201967C002A0DE6 /* TDWVerifyCodeNumView.swift */,
-				2563209A22019654002A0DE6 /* TDWVerifyCodeTextView.swift */,
+				256AB8ED221BFC6D008A61CA /* Tool */,
+				256AB8EB221BFC42008A61CA /* VerifyCodeView */,
 				2563206E22019629002A0DE6 /* Main.storyboard */,
-				2563209E2201A0C6002A0DE6 /* TDWUIColorExtensions.swift */,
-				256320A02201A2D3002A0DE6 /* TDWUIScreenExtensions.swift */,
 				256320712201962A002A0DE6 /* Assets.xcassets */,
 				256320732201962A002A0DE6 /* LaunchScreen.storyboard */,
 				256320762201962A002A0DE6 /* Info.plist */,
@@ -156,6 +150,25 @@
 				2563208C2201962B002A0DE6 /* Info.plist */,
 			);
 			path = VerifyCodeDemoUITests;
+			sourceTree = "<group>";
+		};
+		256AB8EB221BFC42008A61CA /* VerifyCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				256320982201963F002A0DE6 /* TDWVerifyCodeView.swift */,
+				2563209C2201967C002A0DE6 /* TDWVerifyCodeNumView.swift */,
+				2563209A22019654002A0DE6 /* TDWVerifyCodeTextView.swift */,
+			);
+			path = VerifyCodeView;
+			sourceTree = "<group>";
+		};
+		256AB8ED221BFC6D008A61CA /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				2563209E2201A0C6002A0DE6 /* TDWUIColorExtensions.swift */,
+				256320A02201A2D3002A0DE6 /* TDWUIScreenExtensions.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		36FE96B18339A1CB4BCA9B01 /* Pods */ = {
@@ -345,7 +358,6 @@
 				2563206B22019629002A0DE6 /* AppDelegate.swift in Sources */,
 				256320A12201A2D3002A0DE6 /* TDWUIScreenExtensions.swift in Sources */,
 				256320992201963F002A0DE6 /* TDWVerifyCodeView.swift in Sources */,
-				254E53022219557000DCDC25 /* TDWExtensions+String.swift in Sources */,
 				2563209F2201A0C6002A0DE6 /* TDWUIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

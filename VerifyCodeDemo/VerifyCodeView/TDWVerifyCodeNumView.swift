@@ -130,7 +130,7 @@ extension TDWVerifyCodeNumView {
     ///
     /// - Parameter num: 验证码
     func setNum(num: String?) {
-        numLabel.text = num
+        numLabel.text = num?.replacingOccurrences(of: " ", with: "")
         if let num = num, num.isEmpty == false {
             lineView.backgroundColor = UIColor.init(TDWValueRGB: 0x999999)
         } else {
