@@ -1,5 +1,6 @@
 # VerificationCode
 
+### 支持swift4.0以下的
 #### 依赖于SnapKit
 ##### 下载完成后需要pod install
 
