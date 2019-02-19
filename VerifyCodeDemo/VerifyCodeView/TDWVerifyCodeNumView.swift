@@ -88,7 +88,7 @@ class TDWVerifyCodeNumView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let path = UIBezierPath.init(rect: CGRect.init(x: self.frame.size.width * 0.5 + 7.5, y: self.frame.size.height * 0.1, width: 1, height: self.frame.size.height * 0.8))
+        let path = UIBezierPath.init(rect: CGRect.init(x: self.frame.size.width * 0.5 + 5, y: self.frame.size.height * 0.1, width: 1, height: self.frame.size.height * 0.8))
         cursor.path = path.cgPath
     }
     
@@ -129,9 +129,10 @@ extension TDWVerifyCodeNumView {
     /// 验证码赋值，并修改线条颜色
     ///
     /// - Parameter num: 验证码
-    func setNum(num: String?) {
-        numLabel.text = num?.replacingOccurrences(of: " ", with: "")
-        if let num = num, num.isEmpty == false {
+    /// - Parameter isFocus: 是否是焦点
+    func setNum(num: String?, isFocus: Bool) {
+        numLabel.text = num
+        if isFocus {
             lineView.backgroundColor = UIColor.init(TDWValueRGB: 0x999999)
         } else {
             lineView.backgroundColor = UIColor.init(TDWValueRGB: 0xe6e6e6)

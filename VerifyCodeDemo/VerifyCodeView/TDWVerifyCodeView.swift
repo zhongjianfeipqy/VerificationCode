@@ -145,7 +145,7 @@ extension TDWVerifyCodeView: UITextViewDelegate {
         
         if let tempRange = Range.init(range, in: inputText) {
             // 拼接输入后的值
-            inputText = inputText.replacingCharacters(in: tempRange , with: text)                        
+            inputText = inputText.replacingCharacters(in: tempRange , with: text)
             let meetRegx = "[0-9]*"         
             let characterSet = NSPredicate.init(format: "SELF MATCHES %@", meetRegx)
             if characterSet.evaluate(with: inputText) == false {
@@ -169,15 +169,15 @@ extension TDWVerifyCodeView: UITextViewDelegate {
         for i in 0..<codeViews.count {
             let codeView = codeViews[i]
             if i < inputStr.count {
-                codeView.setNum(num: inputStr[String.Index.init(encodedOffset: i)].description)
+                codeView.setNum(num: inputStr[String.Index.init(encodedOffset: i)].description, isFocus: true)
                 codeView.setCursorStatus(true)
             } else {
                 if inputStr.count == 0, i == 0 {
                     codeView.setCursorStatus(false)
-                    codeView.setNum(num: " ")
+                    codeView.setNum(num: nil, isFocus: true)
                 } else {
                     codeView.setCursorStatus(i != inputStr.count)
-                    codeView.setNum(num: nil)
+                    codeView.setNum(num: nil, isFocus: i == inputStr.count)
                 }
             }
         }
