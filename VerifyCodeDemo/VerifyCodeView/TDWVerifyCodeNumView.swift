@@ -129,14 +129,26 @@ extension TDWVerifyCodeNumView {
     /// 验证码赋值，并修改线条颜色
     ///
     /// - Parameter num: 验证码
-    /// - Parameter isFocus: 是否是焦点
-    func setNum(num: String?, isFocus: Bool) {
+    func setNum(num: String?) {
         numLabel.text = num
+    }
+    
+    /// 设置底部线条是否为焦点
+    ///
+    /// - Parameter isFocus: 是否是焦点
+    func setBottomLineFocus(isFocus: Bool) {
         if isFocus {
             lineView.backgroundColor = UIColor.init(TDWValueRGB: 0x999999)
         } else {
             lineView.backgroundColor = UIColor.init(TDWValueRGB: 0xe6e6e6)
         }
+    }
+    
+    /// 获取当前的验证码
+    ///
+    /// - Returns: 验证码
+    func getNum() -> String {
+        return numLabel.text ?? ""
     }
     
     /// 返回验证码值

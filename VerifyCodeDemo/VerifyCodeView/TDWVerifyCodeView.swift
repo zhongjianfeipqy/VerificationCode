@@ -105,6 +105,9 @@ extension TDWVerifyCodeView {
             for i in 0..<self.codeViews.count {
                 let codeView = self.codeViews[i]
                 codeView.setCursorStatus(true)
+                if codeView.getNum().count == 0 {
+                    codeView.setBottomLineFocus(isFocus: false)
+                }
             }
         }
     }
@@ -169,15 +172,18 @@ extension TDWVerifyCodeView: UITextViewDelegate {
         for i in 0..<codeViews.count {
             let codeView = codeViews[i]
             if i < inputStr.count {
-                codeView.setNum(num: inputStr[String.Index.init(encodedOffset: i)].description, isFocus: true)
+                codeView.setNum(num: inputStr[String.Index.init(encodedOffset: i)].description)
+                codeView.setBottomLineFocus(isFocus: true)
                 codeView.setCursorStatus(true)
             } else {
                 if inputStr.count == 0, i == 0 {
                     codeView.setCursorStatus(false)
-                    codeView.setNum(num: nil, isFocus: true)
+                    codeView.setBottomLineFocus(isFocus: true)
+                    codeView.setNum(num: nil)
                 } else {
                     codeView.setCursorStatus(i != inputStr.count)
-                    codeView.setNum(num: nil, isFocus: i == inputStr.count)
+                    codeView.setNum(num: nil)
+                    codeView.setBottomLineFocus(isFocus: i == inputStr.count)
                 }
             }
         }
