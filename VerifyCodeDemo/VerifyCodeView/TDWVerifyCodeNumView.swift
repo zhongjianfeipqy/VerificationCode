@@ -88,7 +88,7 @@ class TDWVerifyCodeNumView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let path = UIBezierPath.init(rect: CGRect.init(x: self.frame.size.width * 0.5 + 5, y: self.frame.size.height * 0.1, width: 1, height: self.frame.size.height * 0.8))
+        let path = UIBezierPath.init(rect: CGRect.init(x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.1, width: 1, height: self.frame.size.height * 0.7))
         cursor.path = path.cgPath
     }
     

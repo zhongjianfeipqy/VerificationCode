@@ -27,6 +27,7 @@ class TDWVerifyCodeView: UIView {
         textView.textColor = .clear
         textView.delegate = self
         textView.keyboardType = .decimalPad
+        textView.isHiddenAllMenu = true
         self.addSubview(textView)
         return textView
     }()

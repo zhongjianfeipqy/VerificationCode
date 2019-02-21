@@ -10,6 +10,9 @@ import UIKit
 
 class TDWVerifyCodeTextView: UITextView {
     
+    /// 是否隐藏所有菜单
+    var isHiddenAllMenu = false
+    
     /// 粘贴 - 会调用两次此闭包  当isTrigger = true的时候才为实际粘贴
     var pasteClouruse: ((_ isTrigger: Bool) -> Bool)?
     
@@ -29,6 +32,12 @@ class TDWVerifyCodeTextView: UITextView {
     var deleteClouruse: ((_ isTrigger: Bool) -> Bool)?
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if isHiddenAllMenu {
+            UIMenuController.shared.isMenuVisible = false
+            return false
+        }
+        
+        
         // 菜单是否隐藏
         var isTrigger = false
         
