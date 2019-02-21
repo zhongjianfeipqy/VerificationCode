@@ -20,16 +20,16 @@ class TDWVerifyCodeView: UIView {
     var inputTextNum: Int = 6
     
     /// 输入框
-    lazy var textView: TDWVerifyCodeTextView = {
-        let textView = TDWVerifyCodeTextView()
-        textView.tintColor = .clear
-        textView.backgroundColor = .clear
-        textView.textColor = .clear
-        textView.delegate = self
-        textView.keyboardType = .decimalPad
-        textView.isHiddenAllMenu = true
-        self.addSubview(textView)
-        return textView
+    lazy var textFiled: TDWVerifyCodeTextView = {
+        let textFiled = TDWVerifyCodeTextView()
+        textFiled.tintColor = .clear
+        textFiled.backgroundColor = .clear
+        textFiled.textColor = .clear
+        textFiled.delegate = self
+        textFiled.keyboardType = .decimalPad
+        textFiled.addTarget(self, action: #selector(textFiledDidChange(_:)), for: .editingChanged)
+        self.addSubview(textFiled)
+        return textFiled
     }()
     
     /// 验证码数量
@@ -63,7 +63,7 @@ class TDWVerifyCodeView: UIView {
     
     
     func initSubviews() {
-        textView.snp.makeConstraints { (make) in
+        textFiled.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(padding)
             make.right.equalToSuperview().offset(-padding)
             make.top.bottom.equalToSuperview()
@@ -95,8 +95,8 @@ class TDWVerifyCodeView: UIView {
 extension TDWVerifyCodeView {
     /// 清除所有输入
     func cleanCodes() {
-        textView.text = ""
-        textViewDidChange(textView)
+        textFiled.text = ""
+        textFiledDidChange(textFiled)
         allCursorHidden()
     }
     
@@ -119,7 +119,7 @@ extension TDWVerifyCodeView {
     
     @objc fileprivate func keyboardShow(note: Notification) {
         isInput = false
-        textViewDidChange(textView)
+        textFiledDidChange(textFiled)
         isInput = true
     }
     
@@ -129,19 +129,19 @@ extension TDWVerifyCodeView {
 }
 
 // MARK: - UITextViewDelegate
-extension TDWVerifyCodeView: UITextViewDelegate {
+extension TDWVerifyCodeView: UITextFieldDelegate {
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         // 输入框已有的值
-        var inputText = textView.text ?? ""
+        var inputText = textFiled.text ?? ""
         
-        if text.count == 0 { // 删除
+        if string.count == 0 { // 删除
             if range.location != inputText.count - 1 { // 删除的不是最后一个
                 if inputText.count > 0 {
                     // 手动删除最后一位
-                    textView.text.removeLast()
-                    textViewDidChange(textView)
+                    textFiled.text?.removeLast()
+                    textFiledDidChange(textFiled)
                 }
                 return false
             }
@@ -149,7 +149,7 @@ extension TDWVerifyCodeView: UITextViewDelegate {
         
         if let tempRange = Range.init(range, in: inputText) {
             // 拼接输入后的值
-            inputText = inputText.replacingCharacters(in: tempRange , with: text)
+            inputText = inputText.replacingCharacters(in: tempRange , with: string)
             let meetRegx = "[0-9]*"         
             let characterSet = NSPredicate.init(format: "SELF MATCHES %@", meetRegx)
             if characterSet.evaluate(with: inputText) == false {
@@ -165,8 +165,8 @@ extension TDWVerifyCodeView: UITextViewDelegate {
         return true
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        let inputStr = textView.text ?? ""
+    @objc func textFiledDidChange(_ textFiled: UITextField) {
+        let inputStr = textFiled.text ?? ""
         
         textValueChange?(inputStr)
         
@@ -192,7 +192,7 @@ extension TDWVerifyCodeView: UITextViewDelegate {
         if isInput, inputStr.count >= inputTextNum {
             // 结束编辑
             DispatchQueue.main.async {
-                textView.resignFirstResponder()
+                textFiled.resignFirstResponder()
             }
             inputFinish?(inputStr)
             allCursorHidden()

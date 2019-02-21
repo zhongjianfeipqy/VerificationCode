@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             make.centerY.equalToSuperview()
             make.height.equalTo(35)
         }
-        codeView.textView.becomeFirstResponder()
+        codeView.textFiled.becomeFirstResponder()
         
         // 监听验证码输入的过程
         codeView.textValueChange = { str in

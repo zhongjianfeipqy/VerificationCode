@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TDWVerifyCodeTextView: UITextView {
+class TDWVerifyCodeTextView: UITextField {
     
     /// 是否隐藏所有菜单
     var isHiddenAllMenu = false
