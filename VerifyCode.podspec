@@ -18,6 +18,7 @@ Pod::Spec.new do |spec|
   spec.name         = "VerifyCode"
   spec.version      = "1.0"
   spec.summary      = "iOS Custom captcha"
+  spec.swift_versions = "4.0"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -53,18 +54,16 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "JF Z" => "a378789308@gmail.com" }
+  spec.author             = { "JF Z" => "378789308@qq.com"}
   # Or just: spec.author    = "JF Z"
   # spec.authors            = { "JF Z" => "a378789308@gmail.com" }
-  # spec.social_media_url   = "https://twitter.com/JF Z"
+  spec.social_media_url   = "https://www.jianshu.com/u/2a97371d263b"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If this Pod runs only on iOS or OS X, then specify the platform and
   #  the deployment target. You can optionally include the target after the platform.
   #
-
-  spec.platform     = :ios
   spec.platform     = :ios, "9.0"
 
   #  When using multiple platforms
@@ -91,7 +90,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/**/*"
+  # spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/**/*"
+  spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/*", "VerifyCodeDemo/VerifyCodeView/TDWExtension/*"
 
   # spec.exclude_files = "Classes/Exclude"
 
@@ -119,7 +119,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.framework  = "SomeFramework"
-  spec.frameworks = "UIKit", "Foundation", "SnapKit"
+  spec.frameworks = "UIKit", "Foundation"
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
@@ -134,6 +134,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "SnapKit", "~> 4.2.0"
+  spec.dependency 'SnapKit', '~> 4.2.0'
 
 end
