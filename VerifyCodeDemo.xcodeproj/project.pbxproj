@@ -17,8 +17,7 @@
 		256320992201963F002A0DE6 /* TDWVerifyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256320982201963F002A0DE6 /* TDWVerifyCodeView.swift */; };
 		2563209B22019654002A0DE6 /* TDWVerifyCodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563209A22019654002A0DE6 /* TDWVerifyCodeTextView.swift */; };
 		2563209D2201967C002A0DE6 /* TDWVerifyCodeNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563209C2201967C002A0DE6 /* TDWVerifyCodeNumView.swift */; };
-		2563209F2201A0C6002A0DE6 /* TDWUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563209E2201A0C6002A0DE6 /* TDWUIColorExtensions.swift */; };
-		256320A12201A2D3002A0DE6 /* TDWUIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256320A02201A2D3002A0DE6 /* TDWUIScreenExtensions.swift */; };
+		256320A12201A2D3002A0DE6 /* TDWExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256320A02201A2D3002A0DE6 /* TDWExtensions.swift */; };
 		B0A54D802B586BC26DAD041F /* Pods_VerifyCodeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99E989052CA85F323758B9A /* Pods_VerifyCodeDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +55,7 @@
 		256320982201963F002A0DE6 /* TDWVerifyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDWVerifyCodeView.swift; sourceTree = "<group>"; };
 		2563209A22019654002A0DE6 /* TDWVerifyCodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDWVerifyCodeTextView.swift; sourceTree = "<group>"; };
 		2563209C2201967C002A0DE6 /* TDWVerifyCodeNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDWVerifyCodeNumView.swift; sourceTree = "<group>"; };
-		2563209E2201A0C6002A0DE6 /* TDWUIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDWUIColorExtensions.swift; sourceTree = "<group>"; };
-		256320A02201A2D3002A0DE6 /* TDWUIScreenExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDWUIScreenExtensions.swift; sourceTree = "<group>"; };
+		256320A02201A2D3002A0DE6 /* TDWExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDWExtensions.swift; sourceTree = "<group>"; };
 		390278A2A28599A1C030DCD8 /* Pods-VerifyCodeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerifyCodeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VerifyCodeDemo/Pods-VerifyCodeDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B1A9810C31697E1CA11AF7FD /* Pods-VerifyCodeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerifyCodeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VerifyCodeDemo/Pods-VerifyCodeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C99E989052CA85F323758B9A /* Pods_VerifyCodeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerifyCodeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +122,6 @@
 			children = (
 				2563206A22019629002A0DE6 /* AppDelegate.swift */,
 				2563206C22019629002A0DE6 /* ViewController.swift */,
-				256AB8ED221BFC6D008A61CA /* Tool */,
 				256AB8EB221BFC42008A61CA /* VerifyCodeView */,
 				2563206E22019629002A0DE6 /* Main.storyboard */,
 				256320712201962A002A0DE6 /* Assets.xcassets */,
@@ -155,6 +152,7 @@
 		256AB8EB221BFC42008A61CA /* VerifyCodeView */ = {
 			isa = PBXGroup;
 			children = (
+				256AB8ED221BFC6D008A61CA /* TDWExtension */,
 				256320982201963F002A0DE6 /* TDWVerifyCodeView.swift */,
 				2563209C2201967C002A0DE6 /* TDWVerifyCodeNumView.swift */,
 				2563209A22019654002A0DE6 /* TDWVerifyCodeTextView.swift */,
@@ -162,13 +160,12 @@
 			path = VerifyCodeView;
 			sourceTree = "<group>";
 		};
-		256AB8ED221BFC6D008A61CA /* Tool */ = {
+		256AB8ED221BFC6D008A61CA /* TDWExtension */ = {
 			isa = PBXGroup;
 			children = (
-				2563209E2201A0C6002A0DE6 /* TDWUIColorExtensions.swift */,
-				256320A02201A2D3002A0DE6 /* TDWUIScreenExtensions.swift */,
+				256320A02201A2D3002A0DE6 /* TDWExtensions.swift */,
 			);
-			path = Tool;
+			path = TDWExtension;
 			sourceTree = "<group>";
 		};
 		36FE96B18339A1CB4BCA9B01 /* Pods */ = {
@@ -355,9 +352,8 @@
 				2563209B22019654002A0DE6 /* TDWVerifyCodeTextView.swift in Sources */,
 				2563209D2201967C002A0DE6 /* TDWVerifyCodeNumView.swift in Sources */,
 				2563206B22019629002A0DE6 /* AppDelegate.swift in Sources */,
-				256320A12201A2D3002A0DE6 /* TDWUIScreenExtensions.swift in Sources */,
+				256320A12201A2D3002A0DE6 /* TDWExtensions.swift in Sources */,
 				256320992201963F002A0DE6 /* TDWVerifyCodeView.swift in Sources */,
-				2563209F2201A0C6002A0DE6 /* TDWUIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
