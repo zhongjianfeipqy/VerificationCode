@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-                    iOS Custom captcha
+                    iOS Custom captcha, Support for swift.
                    DESC
 
   spec.homepage     = "https://github.com/zhongjianfeipqy/VerificationCode"
@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
+  spec.license      = "MIT"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -91,7 +91,10 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "VerifyCodeDemo", "VerificationCode/VerifyCodeDemo/VerifyCodeView/**"
+  spec.source_files  =  "VerificationCode/VerifyCodeDemo/VerifyCodeView/**"
+
+  source 'https://github.com/SnapKit/SnapKit.git'
+
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
