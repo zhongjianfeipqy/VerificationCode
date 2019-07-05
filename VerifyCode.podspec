@@ -91,9 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  =  "VerificationCode/VerifyCodeDemo/VerifyCodeView/**"
-
-  source 'https://github.com/SnapKit/SnapKit.git'
+  spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/**/*"
 
   # spec.exclude_files = "Classes/Exclude"
 
@@ -136,6 +134,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  spec.dependency "SnapKit", "~> 4.2.0"
 
 end
