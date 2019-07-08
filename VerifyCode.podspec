@@ -91,7 +91,8 @@ Pod::Spec.new do |spec|
   #
 
   # spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/**/*"
-  spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/*", "VerifyCodeDemo/VerifyCodeView/TDWExtension/*"
+  # spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/*", "VerifyCodeDemo/VerifyCodeView/TDWExtension/*"
+  spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/**/*"
 
   # spec.exclude_files = "Classes/Exclude"
 
