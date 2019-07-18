@@ -16,9 +16,9 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "VerifyCodeSwift"
-  spec.version      = "2.0.2"
+  spec.version      = "3.0.0"
   spec.summary      = "iOS Custom captcha"
-  spec.swift_versions = "4.0"
+  spec.swift_versions = "5.0"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?

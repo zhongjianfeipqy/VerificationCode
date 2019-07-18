@@ -54,7 +54,7 @@ class TDWVerifyCodeNumView: UIView {
          */
         opacityAnimation.isRemovedOnCompletion = true
         // 决定当前对象在非active时间段的行为。比如动画开始之前或者动画结束之后
-        opacityAnimation.fillMode = kCAFillModeForwards
+        opacityAnimation.fillMode = .forwards
         // 速度控制函数，控制动画运行的节奏
         /*
          kCAMediaTimingFunctionLinear（线性）：匀速，给你一个相对静态的感觉
@@ -62,7 +62,7 @@ class TDWVerifyCodeNumView: UIView {
          kCAMediaTimingFunctionEaseOut（渐出）：动画全速进入，然后减速的到达目的地
          kCAMediaTimingFunctionEaseInEaseOut（渐进渐出）：动画缓慢的进入，中间加速，然后减速的到达目的地。这个是默认的动画行为。
          */
-        opacityAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseIn)
+        opacityAnimation.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
         return opacityAnimation
     }()
     
@@ -77,9 +77,9 @@ class TDWVerifyCodeNumView: UIView {
             make.height.equalTo(0.5)
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(becomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(becomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(enterBack), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(enterBack), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
     }
     
