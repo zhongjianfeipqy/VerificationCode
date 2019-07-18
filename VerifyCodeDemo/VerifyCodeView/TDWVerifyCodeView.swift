@@ -173,8 +173,8 @@ extension TDWVerifyCodeView: UITextFieldDelegate {
         
         for i in 0..<codeViews.count {
             let codeView = codeViews[i]
-            if i < inputStr.count {
-                codeView.setNum(num: inputStr[String.Index.init(encodedOffset: i)].description)
+            if i < inputStr.count {                
+                codeView.setNum(num: inputStr[String.Index(utf16Offset: i, in: inputStr)].description)
                 codeView.setBottomLineFocus(isFocus: true)
                 codeView.setCursorStatus(true)
             } else {
