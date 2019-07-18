@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "VerifyCodeSwift"
-  spec.version      = "1.4"
+  spec.version      = "1.2"
   spec.summary      = "iOS Custom captcha"
   spec.swift_versions = "4.0"
 
