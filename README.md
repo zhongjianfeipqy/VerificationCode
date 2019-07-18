@@ -1,5 +1,12 @@
 # VerificationCode
 
+# Swift4.0
+### pod 'VerifyCodeSwift' -> , '~>2.0'
+
+# Swift5.0
+### pod 'VerifyCodeSwift' -> , '~>3.0'
+
+
 ### 支持swift4.0以下的
 #### 依赖于SnapKit
 ##### 下载完成后需要pod install
