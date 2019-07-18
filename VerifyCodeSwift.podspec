@@ -31,6 +31,7 @@ Pod::Spec.new do |spec|
   # spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/**/*"
   spec.source_files  =  "VerifyCodeDemo/VerifyCodeView/*"
 
+  # 建立TDWExtension文件夹，并且设置文件夹下的源文件
   spec.subspec 'TDWExtension' do |sub|
     sub.source_files  = "VerifyCodeDemo/VerifyCodeView/TDWExtension/*"
   end
