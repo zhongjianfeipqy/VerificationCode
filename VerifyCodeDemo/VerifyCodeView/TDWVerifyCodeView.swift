@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class TDWVerifyCodeView: UIView {
 
@@ -28,7 +29,6 @@ class TDWVerifyCodeView: UIView {
         textFiled.delegate = self
         textFiled.keyboardType = .decimalPad
         textFiled.addTarget(self, action: #selector(textFiledDidChange(_:)), for: .editingChanged)
-        textFiled.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFiled)
         return textFiled
     }()
@@ -64,22 +64,23 @@ class TDWVerifyCodeView: UIView {
     
     
     func initSubviews() {
-        let textFiledH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-padding-[textFiled]-padding-|", options: .directionMask, metrics: ["padding":padding], views: ["textFiled":textFiled])
-        let textFiledV = NSLayoutConstraint.constraints(withVisualFormat: "V:|[textFiled]|", options: .directionMask, metrics: nil, views: ["textFiled":textFiled])
-        textFiled.superview?.addConstraints(textFiledH)
-        textFiled.superview?.addConstraints(textFiledV)
+        textFiled.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(padding)
+            make.right.equalToSuperview().offset(-padding)
+            make.top.bottom.equalToSuperview()
+        }
         
         // 每个验证码框宽度
         let itemWidth: CGFloat = (UIScreen.tdw_width() - padding * 2 - spacing * (CGFloat(inputTextNum) - 1)) / CGFloat(inputTextNum)
         for i in 0..<inputTextNum {
             let codeNumView = TDWVerifyCodeNumView()
-            codeNumView.translatesAutoresizingMaskIntoConstraints = false
             codeNumView.isUserInteractionEnabled = false
             self.addSubview(codeNumView)
-            let codeNumViewH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-m-[codeNumView(itemWidth)]", options: .directionMask, metrics: ["itemWidth":itemWidth, "m": padding + CGFloat(i) * (spacing + itemWidth)], views: ["codeNumView":codeNumView])
-            let codeNumViewV = NSLayoutConstraint.constraints(withVisualFormat: "V:|[codeNumView]|", options: .directionMask, metrics: nil, views: ["codeNumView":codeNumView])
-            codeNumView.superview?.addConstraints(codeNumViewH)
-            codeNumView.superview?.addConstraints(codeNumViewV)
+            codeNumView.snp.makeConstraints { (make) in
+                make.width.equalTo(itemWidth)
+                make.left.equalToSuperview().offset(padding + CGFloat(i) * (spacing + itemWidth))
+                make.top.bottom.equalToSuperview()
+            }
             codeViews.append(codeNumView)
             codeNumView.setCursorStatus(true)
         }

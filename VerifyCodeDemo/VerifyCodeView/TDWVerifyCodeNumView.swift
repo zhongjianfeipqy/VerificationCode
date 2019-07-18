@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class TDWVerifyCodeNumView: UIView {
     
@@ -16,8 +17,7 @@ class TDWVerifyCodeNumView: UIView {
     fileprivate lazy var numLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 17)        
         self.addSubview(label)
         return label
     }()
@@ -25,7 +25,6 @@ class TDWVerifyCodeNumView: UIView {
     fileprivate lazy var lineView: UIView = {
         let line = UIView()
         line.backgroundColor = UIColor.init(TDWValueRGB: 0xe6e6e6)
-        line.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(line)
         return line
     }()
@@ -69,16 +68,14 @@ class TDWVerifyCodeNumView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let numLabelH = NSLayoutConstraint.constraints(withVisualFormat: "H:|[numLabel]|", options: .directionMask, metrics: nil, views: ["numLabel":numLabel])
-        let numLabelV = NSLayoutConstraint.constraints(withVisualFormat: "V:|[numLabel]-0.5-|", options: .directionMask, metrics: nil, views: ["numLabel":numLabel])
-        numLabel.superview?.addConstraints(numLabelH)
-        numLabel.superview?.addConstraints(numLabelV)
-        
-        let lineViewH = NSLayoutConstraint.constraints(withVisualFormat: "H:|[lineView]|", options: .directionMask, metrics: nil, views: ["lineView":lineView])
-        let lineViewV = NSLayoutConstraint.constraints(withVisualFormat: "V:[lineView(0.5)]|", options: .directionMask, metrics: nil, views: ["lineView":lineView])
-        lineView.superview?.addConstraints(lineViewH)
-        lineView.superview?.addConstraints(lineViewV)
+        numLabel.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-0.5)
+        }
+        lineView.snp.makeConstraints { (make) in
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(0.5)
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(becomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
