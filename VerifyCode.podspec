@@ -15,8 +15,8 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "VerifyCode"
-  spec.version      = "1.0"
+  spec.name         = "VerifyCodeSwift"
+  spec.version      = "1.2"
   spec.summary      = "iOS Custom captcha"
   spec.swift_versions = "4.0"
 
@@ -135,6 +135,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency 'SnapKit', '~> 4.2.0'
+  # spec.dependency 'SnapKit', '~> 4.2.0'
 
 end
