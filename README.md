@@ -3,7 +3,13 @@
 # Swift4.0
 
 ```
-pod 'VerifyCodeSwift' -> , '~>2.0'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'VerifyCodeSwift' -> , '~>2.0.1'
+end
 ```
 
 # Swift5.0
