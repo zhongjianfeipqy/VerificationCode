@@ -188,7 +188,6 @@
 				2563206322019629002A0DE6 /* Sources */,
 				2563206422019629002A0DE6 /* Frameworks */,
 				2563206522019629002A0DE6 /* Resources */,
-				431BE2D787DA11A06CB76DAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,23 +305,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		431BE2D787DA11A06CB76DAF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VerifyCodeDemo/Pods-VerifyCodeDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VerifyCodeDemo/Pods-VerifyCodeDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VerifyCodeDemo/Pods-VerifyCodeDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6CD2A0C17DB4D7E11EBD634A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
