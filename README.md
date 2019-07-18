@@ -12,6 +12,18 @@ target '<Your Target Name>' do
 end
 ```
 
+# Swift5.0
+
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'VerifyCodeSwift' -> , '~>3.0.0'
+end
+```
+
 #### 依赖于SnapKit
 ##### 下载完成后需要pod install
 
