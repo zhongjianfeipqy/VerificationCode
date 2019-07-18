@@ -8,7 +8,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'VerifyCodeSwift' -> , '~>2.0.1'
+    pod 'VerifyCodeSwift' -> , '~>2.0.2'
 end
 ```
 
