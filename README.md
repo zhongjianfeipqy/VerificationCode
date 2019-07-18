@@ -1,7 +1,10 @@
 # VerificationCode
 
 # Swift4.0
-> pod 'VerifyCodeSwift' -> , '~>2.0'
+
+```
+pod 'VerifyCodeSwift' -> , '~>2.0'
+```
 
 # Swift5.0
 > pod 'VerifyCodeSwift' -> , '~>3.0'
