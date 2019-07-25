@@ -25,7 +25,6 @@ end
 ```
 
 #### 依赖于SnapKit
-##### 下载完成后需要pod install
 
 ## 工具类
 ![工具类.jpg](https://upload-images.jianshu.io/upload_images/2094754-d0116e762526d75f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
