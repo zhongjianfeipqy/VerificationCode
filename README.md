@@ -1,28 +1,6 @@
 # VerificationCode
 
-# Swift4.0
 
-```
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
-use_frameworks!
-
-target '<Your Target Name>' do
-    pod 'VerifyCodeSwift', '~>2.0.2'
-end
-```
-
-# Swift5.0
-
-```
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
-use_frameworks!
-
-target '<Your Target Name>' do
-    pod 'VerifyCodeSwift', '~>3.0.1'
-end
-```
 
 #### 依赖于SnapKit
 
