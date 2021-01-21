@@ -29,6 +29,7 @@ class TDWVerifyCodeView: UIView {
         textFiled.delegate = self
         textFiled.keyboardType = .decimalPad
         textFiled.addTarget(self, action: #selector(textFiledDidChange(_:)), for: .editingChanged)
+        textFiled.addTarget(self, action: #selector(textFiledDidEnd(_:)), for: .editingDidEnd)
         self.addSubview(textFiled)
         return textFiled
     }()
@@ -195,9 +196,15 @@ extension TDWVerifyCodeView: UITextFieldDelegate {
             DispatchQueue.main.async {
                 textFiled.resignFirstResponder()
             }
-            inputFinish?(inputStr)
             allCursorHidden()
         }
         
+    }
+    
+    @objc func textFiledDidEnd(_ textFiled: UITextField) {
+        guard let inputStr = textFiled.text else { return }
+        if isInput, inputStr.count >= inputTextNum {
+            inputFinish?(inputStr)
+        }
     }
 }
